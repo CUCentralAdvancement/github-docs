@@ -22,6 +22,8 @@ functions are needed, Next.js or Gatsby handles the frontend routing, tooling, a
   be completely static.
 - [Other HTML/CSS/JS](frontend/loose-ends.md) - There will be parts of the frontend not using React but
   those parts will still use the same design tokens to maintain branding consistency.
+- [Cypress Testing](frontend/cypress.md) - Cypress.io is the preferred way to write functional, end-to-end
+  tests for all applications.
 
 ## Backend Apps
 
@@ -66,12 +68,27 @@ also a few services that remain consistent across apps.
 - [Fastly](platform/fastly.md) - ...have to rethink using this and on which projects as it complicates adding
   tracking, logging, redirects, etc. and new languages/static sites might not need Varnish at all.
 - [Auth0](platform/auth0.md) - Used for authentication...
+- [Authorize.net](platform/authorize-net.md) - Used for payment transactions... 
     
 
 ## Salesforce
 
-somehow..
+Will be used somehow...
+
+- [Automated Testing](salesforce/automated-testing.md) - Still being thought out...
+- [Lightning Platform](salesforce/lightning.md) - Still being thought out...
+- [VisualForce React Apps](salesforce/vf-react.md) - Still being thought out...
+- [Mulesoft](salesforce/mulesoft.md) - Still being thought out...
 
 ## Legacy Apps
 
-...
+Drupal 7 site on Pantheon.
+
+- [Giving Site](legacy/giving.md) - ...
+- [Essential CU](legacy/essential-cu.md) - ...
+
+## Hasura Data Graph
+
+Way into the future, but this will federate all data needed for frontend apps via GraphQL.
+
+- [Hasura](backend/hasura.md) - ...
