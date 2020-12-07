@@ -47,3 +47,6 @@ closeComment: false
 
 For this to work, you also need to make sure "security" and "pinned" labels are available in each repo...Look to GitHub's docs if
 you don't know how to do it: https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/managing-labels.
+
+- security - `#b60205` - "Security-related issues never marked as stale."
+- pinned - `#0e8a16` - "Important issues that will never be marked stale."
