@@ -1,0 +1,18 @@
+# Number of days of inactivity before an issue becomes stale
+daysUntilStale: 60
+# Number of days of inactivity before a stale issue is closed
+daysUntilClose: 7
+# Issues with these labels will never be considered stale
+exemptLabels:
+  - pinned
+  - security
+# Label to use when marking an issue as stale
+staleLabel: stale
+# Comment to post when marking an issue as stale. Set to `false` to disable
+markComment: >
+  Since y'all haven't touched me in 60 days, I feel unwanted and will
+  close up shop after 7 more days. If you want to keep me alive, add the
+  "pinned" or "security" labels...but don't be cruel. More info found at
+  https://github.com/CUCentralAdvancement/github-docs/blob/master/github/stalebot.md
+# Comment to post when closing a stale issue. Set to `false` to disable
+closeComment: false
