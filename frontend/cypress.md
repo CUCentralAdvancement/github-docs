@@ -42,7 +42,7 @@ Chromium browser to run our tests.
 
 ## Test Structure
 
-[screenshot of IDE overview screen]
+![screenshot of IDE overview screen](../assets/cypress-ide.png)
 
 The IDE overview screen lists all the tests you have in your codebase under the `/cypress` root directory.
 
