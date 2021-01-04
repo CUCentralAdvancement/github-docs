@@ -16,6 +16,9 @@ to using it as a testing framework.
 - Installing Cypress - https://docs.cypress.io/guides/getting-started/installing-cypress.html
 - Introduction to writing tests - https://docs.cypress.io/guides/core-concepts/introduction-to-cypress.html
 
+- What is Cypress?  - https://docs.cypress.io/guides/overview/why-cypress.html
+- Understanding tradeoffs - https://docs.cypress.io/guides/references/trade-offs.html
+
 ### Adding Cypress To A Project
 
 Once `npm` and `node` are installed, you can add Cypress to a project.

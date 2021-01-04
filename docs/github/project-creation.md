@@ -11,7 +11,7 @@ the reposiroty to public unless there is a reason to make it private. You should
 
 **TODO: Is dependabot needed as an "app" anymore?** 
 
-![screenshot](/gh/project-creation.png)
+![screenshot](../../assets/project-creation.png)
 
 Then, you will need to run a few ternimal commands. You should have Git installed to complete the steps.
 
