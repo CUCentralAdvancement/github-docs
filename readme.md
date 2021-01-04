@@ -55,6 +55,8 @@ but those applications are being moved to the new stack with an expected depreca
 
 ## Heroku Platform
 
+**TODO: Move these stubs to heroku-docs repo.**
+
 Heroku is the platform used to run frontend and backend applications. While Heroku allows for many languages to be 
 deployed on it's infrastructure, we will only discuss deploying apps written in TS, Elixir, Go, or PHP. There are
 also a few services that remain consistent across apps.
