@@ -7,6 +7,15 @@ Organization.
 
 table of contents...
 
+## GitHub Administration
+
+There are many different facets of administering the GitHub Organization.
+
+- [Project Creation](github/project-creation.md) - Most projects will consist of a pre-defined tech stack 
+used across applications. You can find sample files to copy/paste to your new project.
+- [Project Archival](github/project-archival.md) - Some projects will have a definitive life-span, especially
+if they use "static site generation" and can be archived in a static manner.
+
 ## Frontend Apps
 
 The frontend stack is built off of React, Theme UI, and node/TS. Depending on whether server 
