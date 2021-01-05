@@ -1,5 +1,4 @@
 [<-- Home](/readme.md)
-
 # Project Creation
 
 Follow these steps to create a new project in GitHub.
@@ -7,13 +6,13 @@ Follow these steps to create a new project in GitHub.
 ## Repository Creation
 
 It is best to create the repository on GitHub first. Initialize it as a completely blank repository. You should default
-the reposiroty to public unless there is a reason to make it private. You should also add "Dependabot Preview" as an app.
+the repository to public unless there is a reason to make it private. You should also add "Dependabot Preview" as an app.
 
-**TODO: Is dependabot needed as an "app" anymore?** 
+**TODO: Is Dependabot needed as an "app" anymore?** 
 
 ![screenshot](../../assets/project-creation.png)
 
-Then, you will need to run a few ternimal commands. You should have Git installed to complete the steps.
+Then, you will need to run a few terminal commands. You should have Git installed to complete the steps.
 
 ```bash
 # Go where you put code.
