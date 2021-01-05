@@ -2,7 +2,7 @@
 
 This repo holds the standards used when creating and editing code in the CUCentralAdvancement GitHub 
 Organization. The documentation is still in active development and will change structure, but all known
-stubs have been created.
+stubs have been created. As always, PR's are welcome!
 
 ## TOC
 
@@ -14,10 +14,12 @@ There are many different facets of administering the GitHub Organization from cr
 to managing user access.
 
 - [Project Creation](docs/github/project-creation.md) - Most projects will consist of a pre-defined tech stack 
-used across applications. You can find sample files to copy/paste to your new project.
+  used across applications. You can find sample files to copy/paste to your new project.
 - [Project Archival](docs/github/project-archival.md) - Some projects will have a definitive life-span, especially
-if they use "static site generation" and can be archived in a static manner.
-- [User Management](docs/github/user-management.md)
+  if they use "static site generation" and can be archived in a static manner.
+- [User Management](docs/github/user-management.md) - There are several GitHub Teams in the CUCentralAdvancement
+  organization. During employee onboarding/offboarding, the Digital Engagement team is responsible for editing 
+  permissions and maintaining proper user access control across the organization. 
 
 ## Frontend Apps
 
