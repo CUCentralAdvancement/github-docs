@@ -27,8 +27,6 @@ functions are needed, Next.js or Gatsby handles the frontend routing, tooling, a
   the theme system, form validation, animation, etc. will still be the same.
 - [Next.js](docs/frontend/nextjs.md) - Next.js allows for dynamic frontends that need to use logic at some part of
   the request process. Way easier to maintain than setting up a mess of serverless functions.
-- [Gatsby](docs/frontend/gatsby.md) - Gatsby provides a nice platform for documentation and frontends that can
-  be completely static.
 - [Other HTML/CSS/JS](docs/frontend/loose-ends.md) - There will be parts of the frontend not using React but
   those parts will still use the same design tokens to maintain branding consistency.
 - [Cypress Testing](docs/frontend/cypress.md) - Cypress.io is the preferred way to write functional, end-to-end
