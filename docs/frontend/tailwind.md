@@ -70,6 +70,7 @@ will use.
 ```
 
 ```ruby
+// For Ruby/Rails
 <%= render Global::Button.new(variant: 'ouline', text: 'Load more...') %>
 <%= render Global::Button.new(variant: 'primary', text: 'Save Form') %>
 ```
