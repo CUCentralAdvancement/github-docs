@@ -6,7 +6,8 @@ stubs have been created. As always, PR's are welcome!
 
 ## TOC
 
-table of contents...will get filled in...
+table of contents...will get filled in...BY GITHUB. Eat your heart out and use the sticky TOC as you scroll through
+this document,
 
 ## GitHub Administration
 
