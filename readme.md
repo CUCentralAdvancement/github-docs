@@ -18,15 +18,24 @@ to managing user access.
 - [Project Archiving](docs/github/project-archiving.md) - Some projects will have a definitive life-span, especially
   if they use "static site generation" and can be archived in a static manner.
 - [User Management](docs/github/user-management.md) - There are several GitHub Teams in the CUCentralAdvancement
-  organization. During employee onboarding/offboarding, the Digital Engagement team is responsible for editing 
+  organization. During employee onboarding/off-boarding, the Digital Engagement team is responsible for editing 
   permissions and maintaining proper user access control across the organization. 
 
-## Frontend Apps
+## Development Philosophies and Workflows
 
-The frontend stack is built off of React, Theme UI, and node/TS. So far Next.js has handled the frontend routing, 
+Every great development team needs to share a coherent vision to build out the best applications possible. Good
+architecture should be stamped and printed across hosted applications just like DNA serves as the building block
+of life. We adapt our workflows and philosophies as time moves on, but here we will discuss the DNA that sits at
+the core of every development decision, whether it be writing code or performing project management work.
+
+- [To Code Or Not To Code, That Is The Question](docs/dna/code-no-code.md) - Before you try and figure out your own
+  solution, 
+## Frontend Apps And Concerns
+
+The frontend stack is built off of React, Tailwind CSS, and node/TS. So far Next.js has handled the frontend routing, 
 tooling, and SSR/static compilation whether the app needs a server or not.
 
-- [Component Library and Design System](docs/frontend/design-system.md) - A collection of base components built
+- [Using Tailwind For All Web-bssed Styling](docs/frontend/tailwind.md) - A collection of base components built
   using Theme UI and Storybook.
 - [React and Complementary Libraries](docs/frontend/react.md) - Even if the app is rendered via Next.js or another,
   React-based framework the theme system, form validation, animation, etc. will still be the same.
