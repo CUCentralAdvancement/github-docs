@@ -17,8 +17,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "components/tables/ContentEditListingTable.jsx"
+    "**/*.tsx" 
   ],
   "exclude": ["node_modules"]
 }
