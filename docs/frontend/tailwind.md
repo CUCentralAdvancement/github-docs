@@ -6,7 +6,8 @@ Tailwind CSS is a utility-first C
 
 Intro Resources:
 - Tailwind Philosophy - https://tailwindcss.com/docs/utility-first
-- Link to ADR...
+- ADR Records:
+  - https://github.com/CUCentralAdvancement/adr-docs/blob/main/docs/0002-web-styling-tailwind-css.md 
 
 ## Installation
 
