@@ -23,6 +23,10 @@ Use the railsnew.io template to start.
 rails new my_app -d postgresql --skip-test --template https://www.railsbytes.com/script/Xo5s9m
 ```
 
+### Tailwind Serup
+
+...
+
 ### Database Creation
 
 After template installation, you will have a working Rails app with Stimulus and Taliwnd CSS integration. To boot the Rails
@@ -126,3 +130,90 @@ bundle add omniauth-rails_csrf_protection
 You add the Auth0 dependencies via `bundle add` vs. sticking them in the `Gemfile` so that versions are added. On the web,
 a lot of examples have you add the gems without versions, but that can lead to issues between builds and dependency version
 conflicts.
+
+```ruby
+# /config/initializers/auth0.rb
+Rails.application.config.middleware.use OmniAuth::Builder do
+  provider(
+    :auth0,
+    ENV['AUTH0_CLIENT_ID'],
+    ENV['AUTH0_CLIENT_SECRET'],
+    ENV['AUTH0_DOMAIN'],
+    callback_path: '/auth/auth0/callback',
+    authorize_params: {
+      scope: 'openid profile'
+    }
+  )
+end
+```
+
+Adding the initializer config for Auth0 will load it as an OmniAuth resource for when users click to login and logout from the 
+application.
+
+```ruby
+# /app/controller/auth0_controller.rb
+class Auth0Controller < ApplicationController
+  def callback
+    # OmniAuth stores the information returned from Auth0 and the IdP in request.env['omniauth.auth'].
+    # In this code, you will pull the raw_info supplied from the id_token and assign it to the session.
+    # Refer to https://github.com/auth0/omniauth-auth0#authentication-hash for complete information on 'omniauth.auth' contents.
+    auth_info = request.env['omniauth.auth']
+    session[:user] = auth_info
+
+    # Redirect to the dashboard after successful auth.
+    redirect_to '/dashboard'
+  end
+
+  def failure
+    # Handles failed authentication -- Show a failure page (you can also handle with a redirect)
+    @error_msg = request.params['message']
+  end
+
+  def logout
+    reset_session
+    redirect_to logout_url
+  end
+
+  def logout_url
+    request_params = {
+      returnTo: root_url,
+      client_id: ENV['AUTH0_CLIENT_ID']
+    }
+
+    URI::HTTPS.build(host: ENV['AUTH0_DOMAIN'], path: '/v2/logout', query: to_query(request_params)).to_s
+  end
+
+  def to_query(hash)
+    hash.map { |k, v| "#{k}=#{CGI.escape(v)}" unless v.nil? }.reject(&:nil?).join('&')
+  end
+end
+```
+
+Now, we need to create a controller to handle the OmniAuth endpoints as well as communicate with Auth0. It basically 
+boils down to a callback/create session and a logout/destroy session as well as a way to handle failures.
+
+```ruby
+Rails.application.routes.draw do
+  # ...other routes...
+
+  # Auth0 routes.
+  get '/auth/auth0/callback' => 'auth0#callback'
+  get '/auth/failure' => 'auth0#failure'
+  get '/auth/logout' => 'auth0#logout'
+```
+
+To allow users to reach the Auth0 controller we have to add three routes to the  `/config/routes.rb` file.
+
+
+```erb
+<% if user_signed_in? %>
+  <a href="/dashboard">
+    <%= image_tag(session[:user]['info']['image'], alt: 'Profile Pic', class: "mr-2 h-12 rounded-full")%>
+  </a>
+  <%= button_to 'Log Out', '/auth/logout', method: :get, class: "p-2 text-white rounded bg-gold" %>
+<% else %>
+  <%= button_to 'Login', '/auth/auth0', method: :post, class: "p-2 text-white rounded bg-gold" %>
+<% end %>
+```
+
+And that's how you can use the signed in helper method in views along with links/buttons to log in and out of the CMS.
