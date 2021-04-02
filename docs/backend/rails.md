@@ -66,7 +66,7 @@ gem "dotenv-rails", "~> 2.7", groups: [:development, :test]
 
 # In terminal...
 touch .env
-echo ".env" >> .gitignore
+echo "\n# Local env vars.\n.env" >> .gitignore
 ```
 
 You'll first need to add the `dotenv-rails` for Rails to load config values from your `.env` file in development and test
@@ -125,13 +125,13 @@ database, but you can leave that out if not desired.
 docker-compose up -d
 
 # Create databases.
-rake db:create
+./bin/rake db:create
 
 # Run migrations
-rake db:migrate
+./bin/rake db:migrate
 
 # You would seed the database...if you had a seed.
-# rake db:seed
+# ./bin/rake db:seed
 
 # Start the server.
 ./bin/rails s
@@ -160,7 +160,7 @@ a lot of examples have you add the gems without versions, but that can lead to i
 conflicts.
 
 ```ruby
-# /config/initializers/auth0.rb
+# touch config/initializers/auth0.rb
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider(
     :auth0,
@@ -179,7 +179,7 @@ Adding the initializer config for Auth0 will load it as an OmniAuth resource for
 application.
 
 ```ruby
-# /app/controller/auth0_controller.rb
+# touch app/controllers/auth0_controller.rb
 class Auth0Controller < ApplicationController
   def callback
     # OmniAuth stores the information returned from Auth0 and the IdP in request.env['omniauth.auth'].
@@ -228,14 +228,19 @@ Rails.application.routes.draw do
   get '/auth/auth0/callback' => 'auth0#callback'
   get '/auth/failure' => 'auth0#failure'
   get '/auth/logout' => 'auth0#logout'
+
+  # Used to demonstrate logging in and controller auth.
+  get '/dashboard' => 'dashboard#show'
+  root 'home#show'
 ```
 
 To allow users to reach the Auth0 controller we have to add three routes to the  `/config/routes.rb` file.
 
 ```ruby
-# /app/controllers/application_controller.rb
+# app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
   def current_user
+    # This example is wrong and shouldn't be a method?
     @current_user ||= session[:user]
     
     # In the future, the user will exist in the db and be linked via email.
@@ -244,7 +249,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def user_signed_in?
-    @current_user.present? ? true : false
+    session[:user].present? ? true : false
   end
   helper_method :user_signed_in?
 
@@ -277,7 +282,7 @@ a way to relate other models to individual users.
 And that's how you can use the signed in helper method in views along with links/buttons to log in and out of the CMS.
 
 ```ruby
-# /app/controllers/dashboard_controller.rb
+# touch app/controllers/dashboard_controller.rb
 class DashboardController < ApplicationController
   before_action :authenticate_user!
   
