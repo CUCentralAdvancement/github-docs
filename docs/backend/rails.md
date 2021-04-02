@@ -1,0 +1,128 @@
+# Ruby on Rails
+
+Intro paragraph and such...
+
+## Project Templates
+
+Rails has great support for generators and therefore project creation templates. Several templates have been tested out,
+and two in particluar are helpful for building out a DE starter template.
+
+- railsnew.io - This site provides a nice GUI for common Rails configurations and gems. The chosen template adds Stimulus,
+  Tailwind CSS, and Rspec, all of which aren't included in default Rails.
+- jumpstart - This template is maintained by a no-nonsense person, and so you can gather a lot just from the `template.rb`
+  file. It includes a lot of common gems that will be good to include in DE templates.
+  
+The following sections will go over how to create different types of projects using templates. As time goes on, the manual 
+steps will be assimilated into an automated script.
+
+## Project Generation: CMS
+
+Use the railsnew.io template to start.
+
+```
+rails new my_app -d postgresql --skip-test --template https://www.railsbytes.com/script/Xo5s9m
+```
+
+### Database Creation
+
+After template installation, you will have a working Rails app with Stimulus and Taliwnd CSS integration. To boot the Rails
+server as-is you'll need to add some database configuration and create the databases.
+
+```
+# Gemfile at the top...
+gem "dotenv-rails", "~> 2.7", groups: [:development, :test]
+
+# In terminal...
+touch .env
+echo ".env" >> .gitignore
+```
+
+You'll first need to add the `dotenv-rails` for Rails to load config values from your `.env` file in development and test
+environments. In production on Heroku, the `ENV['vars']` will already be loaded, and so the dotenv gem should not be loaded
+in that environment.
+
+As always, make sute not to commit your `.env` file. In the future, you will `cp .env.example .env` once there are example
+env vars to standardize on.
+
+```yaml
+# /config/database.yml
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  
+  # Defaults for dev and test.
+  username: postgres
+  password: postgres
+  host: 127.0.0.1
+  port: 5432
+```
+
+Then, you'll need to modify the database config file. In the `default` block, you can group dev and test db credentials together.
+The production instance will read `ENV['DATABASE_URL']` that Heroku sets by default for the Postgres addons.
+
+```yaml
+# docker-compose.yml
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+```
+
+You'll then need to create a `docker-compose.yml` file to load a Postgres container. Adminer is thrown in to inspect the Postgres
+database, but you can leave that out if not desired.
+
+```bash
+# Spin up containers.
+docker-compose up -d
+
+# Create databases.
+rake db:create
+
+# Run migrations
+rake db:migrate
+
+# You would seed the database...if you had a seed.
+# rake db:seed
+
+# Start the server.
+./bin/rails s
+
+# Start webpack in another tab. This watches and compiles Stimulus/JS files.
+# It should watch .html.erb files too, but not yet...
+./bin/webpack-dev-server
+```
+
+You can then run a series of commands to start the webserver. 
+
+### Authentication/Authorization
+
+Now that the site boots, the next concern is to create users and authentication/authoirzation rules. 
+
+In the future, there will be more categories, but for now we are only describing providing user management for apps where
+only DE staff login via Auth0.
+
+```bash
+bundle add omniauth-auth0
+bundle add omniauth-rails_csrf_protection
+```
+
+You add the Auth0 dependencies via `bundle add` vs. sticking them in the `Gemfile` so that versions are added. On the web,
+a lot of examples have you add the gems without versions, but that can lead to issues between builds and dependency version
+conflicts.
