@@ -56,6 +56,9 @@ but those applications are being moved to the new stack with an expected depreca
   that using a node-based solution will make the most sense when making considerations for a new project, especially
   if there is already a framework that supports most of the needed features. Blitz and Redwood are promising in this
   regard for rapid application development, but Next.js + custom code is still the current winner in this category.
+- [Ruby on Rails](docs/backend/rails.md) - Ruby on Rails is the preminent full-stack rapid application development framework
+  used on Heroku dynos. The simplicity and pragmaticism of the Rails community also fits in well to the scale and team size
+  of Digital Engagement. Rails can be used to host frontend and backend code or serve as a backend to decoupled frontends.
 - [Phoenix](docs/backend/phoenix.md) - Phoenix and Elixir are great fits for web applications that involve users who need
   dashboards and need to edit and update content. The real-time features in addition to LiveView make it easier to
   maintain these applications all in one place. Using Elixir for application development is still exploratory but 
