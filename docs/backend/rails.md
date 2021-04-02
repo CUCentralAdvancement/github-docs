@@ -25,7 +25,35 @@ rails new my_app -d postgresql --skip-test --template https://www.railsbytes.com
 
 ### Tailwind Serup
 
-...
+To setup Tailwind CSS you need to install the additional forms dependency first.
+
+```bash
+yarn add @tailwindcss/forms
+```
+
+```js
+// app/javascript/stylesheets/tailwind.config.js
+module.exports = {
+  purge: [
+    './app/**/*.html.erb',
+    './app/helpers/**/*.rb',
+    './app/javascript/**/*.js'
+  ],
+  theme: {
+    extend: {
+      colors: {
+        gold: '#CFB87C',
+      },
+    },
+  },
+  variants: {},
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
+}
+```
+
+The default theme object and variants will grow as time progresses.
 
 ### Database Creation
 
@@ -204,8 +232,38 @@ Rails.application.routes.draw do
 
 To allow users to reach the Auth0 controller we have to add three routes to the  `/config/routes.rb` file.
 
+```ruby
+# /app/controllers/application_controller.rb
+class ApplicationController < ActionController::Base
+  def current_user
+    @current_user ||= session[:user]
+    
+    # In the future, the user will exist in the db and be linked via email.
+    # @current_user ||= User.find_by(email: session[:user]['info']['email'])
+  end
+  helper_method :current_user
+
+  def user_signed_in?
+    @current_user.present? ? true : false
+  end
+  helper_method :user_signed_in?
+
+  private
+
+  def authenticate_user!
+    return if user_signed_in?
+
+    redirect_to root_path, alert: "You must be signed in to continue."
+  end
+end
+```
+
+To actually see if a user is authenticated or not, we can use these helper methods and pull user data out
+of the session. In the future, there will be a `User` model that has more detailed attributes and provide
+a way to relate other models to individual users.
 
 ```erb
+# ...in some Header partial...
 <% if user_signed_in? %>
   <a href="/dashboard">
     <%= image_tag(session[:user]['info']['image'], alt: 'Profile Pic', class: "mr-2 h-12 rounded-full")%>
@@ -217,3 +275,20 @@ To allow users to reach the Auth0 controller we have to add three routes to the 
 ```
 
 And that's how you can use the signed in helper method in views along with links/buttons to log in and out of the CMS.
+
+```ruby
+# /app/controllers/dashboard_controller.rb
+class DashboardController < ApplicationController
+  before_action :authenticate_user!
+  
+  def show
+    @user = session[:user]
+    @role = ENV['ADMIN_EMAILS'].include?(@user['info']['name']) ? 'Admin' : 'Authenticated User' 
+  end
+end
+```
+
+The user instance variable should come from a helper...but you can also sloppily include it in your views this way as well.
+
+Just the same, role information will be moved to a helper, but it is controlled via environmental variables. This allows
+for a binary role system in addition to the "Anonymous User" role.
