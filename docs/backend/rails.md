@@ -20,7 +20,7 @@ steps will be assimilated into an automated script.
 Use the railsnew.io template to start.
 
 ```
-rails new my_app -d postgresql --skip-test --template https://www.railsbytes.com/script/Xo5s9m
+rails new my_app -d postgresql --template https://www.railsbytes.com/script/zyvsbW
 ```
 
 ### Tailwind Serup
