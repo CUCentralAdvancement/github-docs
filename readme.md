@@ -73,31 +73,11 @@ but those applications are being moved to the new stack with an expected depreca
 
 ## Heroku Platform
 
-**TODO: Move these stubs to heroku-docs repo.**
-
 Heroku is the platform used to run frontend and backend applications. While Heroku allows for many languages to be 
-deployed on it's infrastructure, we will only discuss deploying apps written in TS/JS, Elixir, Go, or PHP. There are
+deployed on it's infrastructure, we will only discuss deploying apps written in TS/JS, Elixir, Go, Ruby, or PHP. There are
 also a few services that remain consistent across apps.
 
-- [Typical Project Lifecycle And Setup](docs/platform/lifecycle.md) - Each app will have a typical way of setting up 
-  environments and deploying code that involves review apps, release scripts, and the Herkou CLI.
-- [Cloudinary as Media Service](docs/platform/cloudinary.md) - Cloudinary makes handling media assets much simpler and 
-  takes the burden off of maintaining media manipulations off of the application servers.  
-- [S3 File Storage](docs/platform/s3.md) - Heroku restarts the app dynos at least once every 24 hours, so any files not 
-  stored in code or generated in the build slug will need to live on an external storage system. 
-- [Algolia Search](docs/platform/algolia.md) - Search is another PITA thing to maintain within an application server, 
-  and Algolia amazingly allows for near instantaneous search as well as a complete UI for managing search rules.
-- [Postgres Database](docs/platform/postgres.md) - Any application needing a data store will use Postgres. Heroku has 
-  invested heavily in building out tooling for Postgres databases and a lot of frameworks suggest using Postgres
-  by default for a data store.
-- [Redis](docs/platform/redis.md) - ...not using this yet, but it might be useful depending on database service performance. 
-- [Logging](docs/platform/logging.md) - ...need much better background for this.
-- [Performance Monitoring](docs/platform/performance.md) - ...same here. Some services but also need application-level
-  tools, like LiveDashboard for Phoenix projects.
-- [Fastly](docs/platform/fastly.md) - ...have to rethink using this and on which projects as it complicates adding
-  tracking, logging, redirects, etc. and new languages/static sites might not need Varnish at all.
-- [Auth0](docs/platform/auth0.md) - Used for authentication...unless Salesforce auth works out.
-- [Authorize.net](docs/platform/authorize-net.md) - Used for payment transactions... 
+You can view the Heroku docs in their own repo: https://github.com/CUCentralAdvancement/heroku-docs
     
 ## Salesforce
 
