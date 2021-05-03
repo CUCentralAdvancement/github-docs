@@ -47,11 +47,16 @@ tooling, and SSR/static compilation whether the app needs a server or not.
 - [Cypress Testing](docs/frontend/cypress.md) - Cypress.io is the preferred way to write functional, end-to-end
   tests for all applications.
 
-## Backend Apps
+## Backend Apps And Concerns
 
 The backend stack is built off of node/TS, Go, and potentially Elixir/Phoenix. Older applications use PHP,
 but those applications are being moved to the new stack with an expected deprecation of PHP usage by Q3 of 2021.
 
+- [Authetication Policies](docs/backend/authentication.md) - Applications built by DE developers use two different
+  kinds of authentication strategies: Ping SSO and Auth0. Both are hosted services leaving no authentication within
+  the individual applications themselves.
+- [Authorization Policies](docs/backend/authorization.md) - Authorization is done within each application but follows
+  a pattern of connecting authentication profiles to user application identities. 
 - [node/TS](docs/backend/node.md) - Express is still one of the most widely used web frameworks, and it is possible
   that using a node-based solution will make the most sense when making considerations for a new project, especially
   if there is already a framework that supports most of the needed features. Blitz and Redwood are promising in this
