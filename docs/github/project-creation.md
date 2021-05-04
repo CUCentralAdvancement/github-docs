@@ -5,14 +5,14 @@ Follow these steps to create a new project in GitHub.
 
 ## Repository Creation
 
-It is best to create the repository on GitHub first. Initialize it as a completely blank repository. You should default
-the repository to public unless there is a reason to make it private. You should also add "Dependabot Preview" as an app.
-
-**TODO: Is Dependabot needed as an "app" anymore?** 
+It is best to create the repository on GitHub first. Initialize it as a completely blank 
+repository as you'll copy template files into your repo at a later step. You should 
+default the repository to public unless there is a reason to make it private.
 
 ![screenshot](../../assets/project-creation.png)
 
-Then, you will need to run a few terminal commands. You should have Git installed to complete the steps.
+Then, you will need to run a few terminal commands. You should have Git installed to 
+complete the steps.
 
 ```bash
 # Go where you put code.
@@ -23,7 +23,24 @@ git clone git@github.com:CUCentralAdvancement/my-repo.git my-repo
 cd my-repo
 ```
 
-...
+## GitHub Template Files
+
+GitHub allows you to create template repositories that generate actual project repositories,
+but for now we are copying files from the `/.github` and `/templates` directories. We'll go
+through each of the available template files first and then describe how they relate to the
+available tech stacks.
+
+GitHub `/.gituhb`:
+- `dependabot.yml` - 
+- `stale.yml` - 
+- `CODE_OF_CONDUCT.md` - 
+- `ISSUE_TEMPLATE/bug_report.md` - 
+- `ISSUE_TEMPLATE/development-task.md` - 
+- `ISSUE_TEMPLATE/feature-story.md` -
+- `LICENSE` - 
+  
+General Templates `/templates`:
+- `README.md` - 
 
 ## Available Stacks
 

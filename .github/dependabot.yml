@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Change to your needs https://docs.github.com/en/code-security/supply-chain-security/configuration-options-for-dependency-updates
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
