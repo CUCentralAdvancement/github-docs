@@ -1,60 +1,70 @@
 # Standards
 
-This repo holds the standards used when creating and editing code in the CUCentralAdvancement GitHub 
-Organization. The documentation is still in active development and will change structure, but all known
-stubs have been created. As always, PR's are welcome!
+This repo holds the standards used when creating and editing code in the CUCentralAdvancement 
+GitHub Organization. The documentation is still in active development and will change 
+structure, but all known stubs have been created. As always, PR's are welcome!
 
 ## TOC
 
-table of contents...will get filled in...BY GITHUB. Eat your heart out and use the sticky TOC as you scroll through
-this document,
+GitHub now includes ToC for all project readmes. Look ^^^ as you scroll.
 
 ## GitHub Administration
 
-There are many different facets of administering the GitHub Organization from creating and archiving projects
-to managing user access.
+There are many different facets of administering the GitHub Organization from creating 
+and archiving projects to managing user access.
 
-- [Project Creation](docs/github/project-creation.md) - Most projects will consist of a pre-defined tech stack 
-  used across applications. You can find sample files to copy/paste to your new project.
-- [Project Archiving](docs/github/project-archiving.md) - Some projects will have a definitive life-span, especially
-  if they use "static site generation" and can be archived in a static manner.
-- [User Management](docs/github/user-management.md) - There are several GitHub Teams in the CUCentralAdvancement
-  organization. During employee onboarding/off-boarding, the Digital Engagement team is responsible for editing 
-  permissions and maintaining proper user access control across the organization. 
+- [Project Creation](docs/github/project-creation.md) - Most projects will consist of a 
+  pre-defined tech stack used across applications. You can find sample files to copy/paste 
+  to your new project.
+- [Project Archiving](docs/github/project-archiving.md) - Some projects will have a definitive 
+  life-span, especially if they use "static site generation" and can be archived in a static 
+  manner.
+- [User Management](docs/github/user-management.md) - There are several GitHub Teams in the 
+  CUCentralAdvancement organization. During employee onboarding/off-boarding, the Digital 
+  Engagement team is responsible for editing permissions and maintaining proper user access 
+  control across the organization. 
 
 ## Development Philosophies and Workflows
 
-Every great development team needs to share a coherent vision to build out the best applications possible. Good
-architecture should be stamped and printed across hosted applications just like DNA serves as the building block
-of life. We adapt our workflows and philosophies as time moves on, but here we will discuss the DNA that sits at
-the core of every development decision, whether it be writing code or performing project management work.
+Every great development team needs to share a coherent vision to build out the best 
+applications possible. Good architecture should be stamped and printed across hosted 
+applications just like DNA serves as the building block of life. We adapt our workflows and 
+philosophies as time moves on, but here we will discuss the DNA that sits at the core of every 
+development decision, whether it be writing code or performing project management work.
 
-- [To Code Or Not To Code, That Is The Question](docs/dna/code-no-code.md) - Before you try and figure out your own
-  solution, 
+- [To Code Or Not To Code, That Is The Question](docs/dna/code-no-code.md) - Before you try 
+  and figure out your own solution, 
+
 ## Frontend Apps And Concerns
 
-The frontend stack is built off of React, Tailwind CSS, and node/TS. So far Next.js has handled the frontend routing, 
-tooling, and SSR/static compilation whether the app needs a server or not.
+The frontend stack is built off of React, Tailwind CSS, and node/TS. So far Next.js has 
+handled the frontend routing, tooling, and SSR/static compilation whether the app needs a 
+server or not.
 
-- [Using Tailwind For All Web-bssed Styling](docs/frontend/tailwind.md) - A collection of base components built
-  using Theme UI and Storybook.
-- [React and Complementary Libraries](docs/frontend/react.md) - Even if the app is rendered via Next.js or another,
-  React-based framework the theme system, form validation, animation, etc. will still be the same.
-- [Next.js](docs/frontend/nextjs.md) - Next.js allows for dynamic frontends that need to use logic at some part of
-  the request process. Way easier to maintain than setting up a mess of serverless functions.
-- [Other HTML/CSS/JS](docs/frontend/loose-ends.md) - There will be parts of the frontend not using React but
-  those parts will still use the same design tokens to maintain branding consistency.
-- [Cypress Testing](docs/frontend/cypress.md) - Cypress.io is the preferred way to write functional, end-to-end
-  tests for all applications.
+- [Using Tailwind For All Web-bssed Styling](docs/frontend/tailwind.md) - A collection of base 
+  components built using Theme UI and Storybook.
+- [React and Complementary Libraries](docs/frontend/react.md) - Even if the app is rendered 
+  via Next.js or another, React-based framework the theme system, form validation, animation, 
+  etc. will still be the same.
+- [Next.js](docs/frontend/nextjs.md) - Next.js allows for dynamic frontends that need to use 
+  logic at some part of the request process. Way easier to maintain than setting up a mess 
+  of serverless functions.
+- [Other HTML/CSS/JS](docs/frontend/loose-ends.md) - There will be parts of the frontend not 
+  using React but those parts will still use the same design tokens to maintain branding 
+  consistency.
+- [Cypress Testing](docs/frontend/cypress.md) - Cypress.io is the preferred way to write 
+  functional, end-to-end tests for all applications.
 
 ## Backend Apps And Concerns
 
-The backend stack is built off of node/TS, Go, and potentially Elixir/Phoenix. Older applications use PHP,
-but those applications are being moved to the new stack with an expected deprecation of PHP usage by Q3 of 2021.
+The backend stack is built off of node/TS, Go, and potentially Elixir/Phoenix. Older 
+applications use PHP, but those applications are being moved to the new stack with an expected 
+deprecation of PHP usage by Q3 of 2021.
 
-- [Authetication Policies](docs/backend/authentication.md) - Applications built by DE developers use two different
-  kinds of authentication strategies: Ping SSO and Auth0. Both are hosted services leaving no authentication within
-  the individual applications themselves.
+- [Authetication Policies](docs/backend/authentication.md) - Applications built by DE 
+  developers use two different kinds of authentication strategies: Ping SSO and Auth0. 
+  Both are hosted services leaving no authentication within the individual applications 
+  themselves.
 - [Authorization Policies](docs/backend/authorization.md) - Authorization is done within each application but follows
   a pattern of connecting authentication profiles to user application identities. 
 - [node/TS](docs/backend/node.md) - Express is still one of the most widely used web frameworks, and it is possible
