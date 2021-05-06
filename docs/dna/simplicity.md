@@ -2,3 +2,6 @@
 
 # To Code Or Not To Code, That Is The Question
 
+include:
+- Heroku manifesto doc: 
+- Rails manifesto

@@ -117,4 +117,30 @@ Examples could be:
 - The backup schedule for databases.
 - How users can edit content with a UI as well as API endpoints.
 
+## Production Checklist
+
+Heroku has [a list of recommended steps to take](https://devcenter.heroku.com/articles/production-check) 
+before launching an application into production. The Digital Engagement team also has a 
+few recommendations to complete before launching anything into production.
+
+Copy the checklist here and complete all items before launching the app into production
+on Heroku.
+
+GitHub:
+- [ ] Dependabot set up for timely dependency updates
+- [ ] System and unit tests run on each PR before being merged into the main branch
+- [ ] Code linting runs on each PR before being merged into the main branch
+- [ ] Linters or scanners show no accessibility issues while using the app
+- [ ] CodeQL or similar scanner for preventing sensitive info in commits
+- [ ] Readme template is completely filled in including this production checklist
+
+Heroku's Production Environment:
+- [ ] At least two dynos each for web and workers are running in production for 
+  redundancy
+- [ ] If database, use a production tier database
+- [ ] Backup schedule and DR for databases, media assets
+- [ ] App monitoring tool and alerts set up
+- [ ] Log monitoring tool and alerts set up
+- [ ] SLA agreed upon and written down for service uptime and maintenance
+
 
