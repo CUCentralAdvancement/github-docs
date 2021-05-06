@@ -32,8 +32,12 @@ applications just like DNA serves as the building block of life. We adapt our wo
 philosophies as time moves on, but here we will discuss the DNA that sits at the core of every 
 development decision, whether it be writing code or performing project management work.
 
-- [To Code Or Not To Code, That Is The Question](docs/dna/code-no-code.md) - Before you try 
-  and figure out your own solution, 
+- [Simplicity](docs/dna/simplicity.md) - Before you try 
+  and figure out your own solution
+- [Gitflow](docs/dna/gitflow.md) - 
+- [Kanban Project Board](docs/dna/kanban.md) - 
+- [Project Code Review](docs/dna/code-review.md) - 
+- [Testing Philosophy](docs/dna/testing.md) - 
 
 ## Frontend Apps And Concerns
 
