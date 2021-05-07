@@ -32,12 +32,23 @@ applications just like DNA serves as the building block of life. We adapt our wo
 philosophies as time moves on, but here we will discuss the DNA that sits at the core of every 
 development decision, whether it be writing code or performing project management work.
 
-- [Simplicity](docs/dna/simplicity.md) - Before you try 
-  and figure out your own solution
-- [Gitflow](docs/dna/gitflow.md) - 
-- [Kanban Project Board](docs/dna/kanban.md) - 
-- [Project Code Review](docs/dna/code-review.md) - 
-- [Testing Philosophy](docs/dna/testing.md) - 
+- [Simplicity](docs/dna/simplicity.md) - To get in the right mindset, you should first
+  focus on the immediate task at hand. Developers tend to expand all problems put before
+  them looking for scaling issues and potential bugs...but we don't need to think about those
+  things first.
+- [Theory of Constraints](docs/dna/constraints.md) - Building off of the KISS mantra, the
+  theory of constraints meets you where you're at and is solely focused on increasing
+  productivity without burdening you with arbitrary metrics to track.
+- [Kanban Project Board](docs/dna/kanban.md) - Once you're oriented to a simpler mindset,
+  the next step is taking an idea and moving it through a Kanban board that ends with
+  deployment.
+- [Gitflow](docs/dna/gitflow.md) - While working on the code, you'll need to use an effective
+  branching strategy to handle multiple work in progress features.
+- [Project Code Review](docs/dna/code-review.md) - With few hands to do the work, code review
+  can be tricky, but with the addition of automation, it becomes easier.
+- [Testing Philosophy](docs/dna/testing.md) - All projects should have tests written as
+  development progresses, but people shouldn't waste time writing extraneous tests.
+- Should add DDD principles?
 
 ## Frontend Apps And Concerns
 

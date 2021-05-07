@@ -11,3 +11,8 @@ Please describe your development task in as much detail as you'd like.
 **Acceptance Criteria**
 
 - [ ] Added tests...
+
+**Next Issue**
+
+What happens after this issue is completed? Can this code be deployed or
+is it part of a larger process with subsequent steps?
