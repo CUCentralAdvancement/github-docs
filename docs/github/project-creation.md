@@ -1,11 +1,11 @@
 [<-- Home](/readme.md)
 # Project Creation
 
-Follow these steps to create a new project in GitHub.
+Follow these steps to create a new project in GH (GitHub).
 
 ## Repository Creation
 
-It is best to create the repository on GitHub first. Initialize it as a completely blank 
+It is best to create the repository on GH first. Initialize it as a completely blank 
 repository as you'll copy template files into your repo at a later step. You should 
 default the repository to public unless there is a reason to make it private.
 
@@ -68,3 +68,14 @@ of documentation in the list of tech stacks.
   https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_create_new.htm
 
 Please follow instructions in those stubs as far as copying additional template files.
+
+## Repository Settings
+
+Finally, you should go to the "Settings" tab of the GH project to add team members and change
+a few default settings:
+
+- **Options** - Turn off the "wikis" and "projects" features.
+- **Manage access** - Add appropriate teams for the project.
+- **Security & analysis** - Make sure everything is enabled and at least one team has access
+  to the Dependabot security alerts. Also, go to the "Security" tab and make sure that all the
+  sections are green.

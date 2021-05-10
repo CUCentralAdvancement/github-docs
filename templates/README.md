@@ -130,6 +130,7 @@ GitHub:
 - [ ] CodeQL or similar scanner for preventing sensitive info in commits
 - [ ] Alerts for security issues sent to Slack alerts channel
 - [ ] Readme template is completely filled in including this production checklist
+- [ ] Security policy filled out for reporting project issues relates to security.
 
 Heroku's Production Environment:
 - [ ] At least two dynos each for web and workers are running in production for 
