@@ -49,7 +49,7 @@ stop at a stub, mock, or spy? Why learn all of those terms and argue about which
 to use. Instead, jump to the system level and test the whole thing. Tools like Cypress make
 standardizing the process across projects easier.
 
-# How
+## How
 
 For **model tests**, you'll want to adopt the idiomatic practices for the unit test framework
 of the language you're using. This will differ project-to-project.
@@ -57,3 +57,8 @@ of the language you're using. This will differ project-to-project.
 For **system tests**, use Cypress for all cases. More information can be found in the general
 "Testing Methods" documentation repo:
 https://github.com/CUCentralAdvancement/testing-methods/blob/main/docs/training-cypress.md
+
+## Inspirations
+
+- Model and system specs in a Rails lens - https://www.codewithjason.com/different-kinds-rails-tests-use/
+- Testing Methods repo with Cypress thoughts - https://github.com/CUCentralAdvancement/testing-methods
