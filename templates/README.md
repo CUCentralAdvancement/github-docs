@@ -13,7 +13,8 @@ and this is why the local development setup is the first heading in the readme.
 
 Prerequisites:
 - You might need to install something first.
-- You should list `asdf`, Homebrew, Docker, and anything else here
+- You should list `asdf`, Homebrew, Docker, and anything else here.
+- Please look over when to use `asdf` and when to use Docker for the app container...need link.
 
 It is best to write a series commands that a developer can run from the command line. Putting 
 everything in one `./installproject.sh` with a bunch of options is overkill so start out by 
