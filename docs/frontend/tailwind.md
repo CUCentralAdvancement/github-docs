@@ -5,25 +5,29 @@
 Tailwind CSS is a utility-first C
 
 Intro Resources:
+
 - Tailwind Philosophy - https://tailwindcss.com/docs/utility-first
 - ADR Records:
-  - https://github.com/CUCentralAdvancement/adr-docs/blob/main/docs/0002-web-styling-tailwind-css.md 
+    - https://github.com/CUCentralAdvancement/adr-docs/blob/main/docs/0002-web-styling-tailwind-css.md
 
 ## Installation
 
-You most likely will be using frontend framework to install Tailwind in DE (Digital Engagement) projects.
-There are specific instructions on how to add Tailwind to many different frameworks including Next.js.
+You most likely will be using frontend framework to install Tailwind in DE (Digital Engagement)
+projects. There are specific instructions on how to add Tailwind to many different frameworks
+including Next.js.
 
 ### Next.js
 
 Steps:
+
 - https://tailwindcss.com/docs/guides/nextjs
 - Also add Tailwind Forms, `yarn add @tailwindcss/forms`
 - Copy template from [Tailwind config file](/templates/tailwind/tailwind.config.js)
 
-After installing, you will have both `postcss.config.js` and `tailwind.config.js` in your root directory. You
-do not need to edit the PostCSS config file, but you should place theme defaults in the Tailwind config file.
-Please copy it from the link above, but for reference, it will look like this.
+After installing, you will have both `postcss.config.js` and `tailwind.config.js` in your root
+directory. You do not need to edit the PostCSS config file, but you should place theme defaults in
+the Tailwind config file. Please copy it from the link above, but for reference, it will look like
+this.
 
 ```js
 // tailwind.config.js
@@ -57,12 +61,12 @@ rails new my_app -d postgresql --skip-test --template https://www.railsbytes.com
 
 ## Usage
 
-DE will have a component library with instructions on how to use Tailwind in different frameworks and
-template languages. For now, DE devs use the Tailwind docs a lot and have only added custom colors to the
-theme object.
+DE will have a component library with instructions on how to use Tailwind in different frameworks
+and template languages. For now, DE devs use the Tailwind docs a lot and have only added custom
+colors to the theme object.
 
-In the future, components will have variants that describe the additional styling context, if any, the component
-will use.
+In the future, components will have variants that describe the additional styling context, if any,
+the component will use.
 
 ```jsx
 // For Next.js/React

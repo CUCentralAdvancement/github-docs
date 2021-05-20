@@ -6,16 +6,17 @@ Intro paragraph and such...
 
 ## Project Templates
 
-Rails has great support for generators and therefore project creation templates. Several templates have been tested out,
-and two in particluar are helpful for building out a DE starter template.
+Rails has great support for generators and therefore project creation templates. Several templates
+have been tested out, and two in particluar are helpful for building out a DE starter template.
 
-- railsnew.io - This site provides a nice GUI for common Rails configurations and gems. The chosen template adds Stimulus,
-  Tailwind CSS, and Rspec, all of which aren't included in default Rails.
-- jumpstart - This template is maintained by a no-nonsense person, and so you can gather a lot just from the `template.rb`
+- railsnew.io - This site provides a nice GUI for common Rails configurations and gems. The chosen
+  template adds Stimulus, Tailwind CSS, and Rspec, all of which aren't included in default Rails.
+- jumpstart - This template is maintained by a no-nonsense person, and so you can gather a lot just
+  from the `template.rb`
   file. It includes a lot of common gems that will be good to include in DE templates.
-  
-The following sections will go over how to create different types of projects using templates. As time goes on, the manual 
-steps will be assimilated into an automated script.
+
+The following sections will go over how to create different types of projects using templates. As
+time goes on, the manual steps will be assimilated into an automated script.
 
 ## Project Generation: CMS
 
@@ -59,8 +60,9 @@ The default theme object and variants will grow as time progresses.
 
 ### Database Creation
 
-After template installation, you will have a working Rails app with Stimulus and Taliwnd CSS integration. To boot the Rails
-server as-is you'll need to add some database configuration and create the databases.
+After template installation, you will have a working Rails app with Stimulus and Taliwnd CSS
+integration. To boot the Rails server as-is you'll need to add some database configuration and
+create the databases.
 
 ```
 # Gemfile at the top...
@@ -71,12 +73,12 @@ touch .env
 echo "\n# Local env vars.\n.env" >> .gitignore
 ```
 
-You'll first need to add the `dotenv-rails` for Rails to load config values from your `.env` file in development and test
-environments. In production on Heroku, the `ENV['vars']` will already be loaded, and so the dotenv gem should not be loaded
-in that environment.
+You'll first need to add the `dotenv-rails` for Rails to load config values from your `.env` file in
+development and test environments. In production on Heroku, the `ENV['vars']` will already be
+loaded, and so the dotenv gem should not be loaded in that environment.
 
-As always, make sute not to commit your `.env` file. In the future, you will `cp .env.example .env` once there are example
-env vars to standardize on.
+As always, make sute not to commit your `.env` file. In the future, you will `cp .env.example .env`
+once there are example env vars to standardize on.
 
 ```yaml
 # /config/database.yml
@@ -87,7 +89,7 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  
+
   # Defaults for dev and test.
   username: postgres
   password: postgres
@@ -95,8 +97,9 @@ default: &default
   port: 5432
 ```
 
-Then, you'll need to modify the database config file. In the `default` block, you can group dev and test db credentials together.
-The production instance will read `ENV['DATABASE_URL']` that Heroku sets by default for the Postgres addons.
+Then, you'll need to modify the database config file. In the `default` block, you can group dev and
+test db credentials together. The production instance will read `ENV['DATABASE_URL']` that Heroku
+sets by default for the Postgres addons.
 
 ```yaml
 # docker-compose.yml
@@ -119,8 +122,8 @@ services:
       - 8080:8080
 ```
 
-You'll then need to create a `docker-compose.yml` file to load a Postgres container. Adminer is thrown in to inspect the Postgres
-database, but you can leave that out if not desired.
+You'll then need to create a `docker-compose.yml` file to load a Postgres container. Adminer is
+thrown in to inspect the Postgres database, but you can leave that out if not desired.
 
 ```bash
 # Spin up containers.
@@ -143,23 +146,23 @@ docker-compose up -d
 ./bin/webpack-dev-server
 ```
 
-You can then run a series of commands to start the webserver. 
+You can then run a series of commands to start the webserver.
 
 ### Authentication/Authorization
 
-Now that the site boots, the next concern is to create users and authentication/authoirzation rules. 
+Now that the site boots, the next concern is to create users and authentication/authoirzation rules.
 
-In the future, there will be more categories, but for now we are only describing providing user management for apps where
-only DE staff login via Auth0.
+In the future, there will be more categories, but for now we are only describing providing user
+management for apps where only DE staff login via Auth0.
 
 ```bash
 bundle add omniauth-auth0
 bundle add omniauth-rails_csrf_protection
 ```
 
-You add the Auth0 dependencies via `bundle add` vs. sticking them in the `Gemfile` so that versions are added. On the web,
-a lot of examples have you add the gems without versions, but that can lead to issues between builds and dependency version
-conflicts.
+You add the Auth0 dependencies via `bundle add` vs. sticking them in the `Gemfile` so that versions
+are added. On the web, a lot of examples have you add the gems without versions, but that can lead
+to issues between builds and dependency version conflicts.
 
 ```ruby
 # touch config/initializers/auth0.rb
@@ -177,8 +180,8 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-Adding the initializer config for Auth0 will load it as an OmniAuth resource for when users click to login and logout from the 
-application.
+Adding the initializer config for Auth0 will load it as an OmniAuth resource for when users click to
+login and logout from the application.
 
 ```ruby
 # touch app/controllers/auth0_controller.rb
@@ -219,8 +222,9 @@ class Auth0Controller < ApplicationController
 end
 ```
 
-Now, we need to create a controller to handle the OmniAuth endpoints as well as communicate with Auth0. It basically 
-boils down to a callback/create session and a logout/destroy session as well as a way to handle failures.
+Now, we need to create a controller to handle the OmniAuth endpoints as well as communicate with
+Auth0. It basically boils down to a callback/create session and a logout/destroy session as well as
+a way to handle failures.
 
 ```ruby
 Rails.application.routes.draw do
@@ -236,7 +240,8 @@ Rails.application.routes.draw do
   root 'home#show'
 ```
 
-To allow users to reach the Auth0 controller we have to add three routes to the  `/config/routes.rb` file.
+To allow users to reach the Auth0 controller we have to add three routes to the  `/config/routes.rb`
+file.
 
 ```ruby
 # app/controllers/application_controller.rb
@@ -265,9 +270,9 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-To actually see if a user is authenticated or not, we can use these helper methods and pull user data out
-of the session. In the future, there will be a `User` model that has more detailed attributes and provide
-a way to relate other models to individual users.
+To actually see if a user is authenticated or not, we can use these helper methods and pull user
+data out of the session. In the future, there will be a `User` model that has more detailed
+attributes and provide a way to relate other models to individual users.
 
 ```erb
 # ...in some Header partial...
@@ -281,7 +286,8 @@ a way to relate other models to individual users.
 <% end %>
 ```
 
-And that's how you can use the signed in helper method in views along with links/buttons to log in and out of the CMS.
+And that's how you can use the signed in helper method in views along with links/buttons to log in
+and out of the CMS.
 
 ```ruby
 # touch app/controllers/dashboard_controller.rb
@@ -295,7 +301,8 @@ class DashboardController < ApplicationController
 end
 ```
 
-The user instance variable should come from a helper...but you can also sloppily include it in your views this way as well.
+The user instance variable should come from a helper...but you can also sloppily include it in your
+views this way as well.
 
-Just the same, role information will be moved to a helper, but it is controlled via environmental variables. This allows
-for a binary role system in addition to the "Anonymous User" role.
+Just the same, role information will be moved to a helper, but it is controlled via environmental
+variables. This allows for a binary role system in addition to the "Anonymous User" role.

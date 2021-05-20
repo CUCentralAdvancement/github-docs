@@ -1,22 +1,25 @@
 # Stalebot
 
-Stale bot helps to keep the issue queues clean. After 60 days, all inactive issues will be marked for closure unless you add
-one of the following labels:
+Stale bot helps to keep the issue queues clean. After 60 days, all inactive issues will be marked
+for closure unless you add one of the following labels:
 
-- **"pinned"** - A pinned issue is one that is important to remain open but that will potentially take longer 
-than two months to work on. These issues should be few and far between. Pinned labels should never be put on
-issues upon creation.
-- **"security"** - Security issues need updates quickly, but I suppose it's possible that one might not be able
-to move to production that fast. Security labels should be put on issues upon creation.
+- **"pinned"** - A pinned issue is one that is important to remain open but that will potentially
+  take longer than two months to work on. These issues should be few and far between. Pinned labels
+  should never be put on issues upon creation.
+- **"security"** - Security issues need updates quickly, but I suppose it's possible that one might
+  not be able to move to production that fast. Security labels should be put on issues upon
+  creation.
 
 ## Configuration
 
-Each repo needs to be activated for Stale bot use. This requires adding the repo in a GitHub admin section, a YAML file, and some labels.
+Each repo needs to be activated for Stale bot use. This requires adding the repo in a GitHub admin
+section, a YAML file, and some labels.
 
 ### Repo Permissions
 
-To add or remove repos from Stale bot usage, go to https://github.com/organizations/CUCentralAdvancement/settings/installations, 
-"Configure" Stale, and add/remove from dropdown repo select menu. 
+To add or remove repos from Stale bot usage, go
+to https://github.com/organizations/CUCentralAdvancement/settings/installations,
+"Configure" Stale, and add/remove from dropdown repo select menu.
 
 ### YAML File
 
@@ -45,8 +48,10 @@ closeComment: false
 
 ### Issue Labels
 
-For this to work, you also need to make sure "security" and "pinned" labels are available in each repo...Look to GitHub's docs if
-you don't know how to do it: https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/managing-labels.
+For this to work, you also need to make sure "security" and "pinned" labels are available in each
+repo...Look to GitHub's docs if you don't know how to do
+it: https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/managing-labels
+.
 
 - security - `#b60205` - "Security-related issues never marked as stale."
 - pinned - `#0e8a16` - "Important issues that will never be marked stale."

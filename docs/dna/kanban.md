@@ -2,20 +2,19 @@
 
 # Kanban Project Board
 
-The DE (Digital Engagement) team manages all work via a Kanban project board. Taiichi Ohno, an 
-industrial engineer at Toyota, developed Kanban to improve manufacturing efficiency, but many
-people have adopted the same principles within software development. Theory of Constraints,
-sometimes called "drum-buffer-rope", is also intertwined with the Kanban concept as it applies
-to software development.
+The DE (Digital Engagement) team manages all work via a Kanban project board. Taiichi Ohno, an
+industrial engineer at Toyota, developed Kanban to improve manufacturing efficiency, but many people
+have adopted the same principles within software development. Theory of Constraints, sometimes
+called "drum-buffer-rope", is also intertwined with the Kanban concept as it applies to software
+development.
 
-Work is condensed into one "project board" that lists all the tasks in one place. The board
-has columns, a directional flow, and rules related to how many tasks can be in each column.
-It is said to be a "pull system" where work gets pulled into development as other tasks are
-finished. Once the capacity rules are reached, no more work can be placed onto the board
-preventing backlog tasks becoming outdated or irrelevant.
+Work is condensed into one "project board" that lists all the tasks in one place. The board has
+columns, a directional flow, and rules related to how many tasks can be in each column. It is said
+to be a "pull system" where work gets pulled into development as other tasks are finished. Once the
+capacity rules are reached, no more work can be placed onto the board preventing backlog tasks
+becoming outdated or irrelevant.
 
-The DE project board currently consists of six stages. 
-
+The DE project board currently consists of six stages.
 
 | Column | Description | 
 | :----: | :---: |
@@ -29,36 +28,40 @@ The DE project board currently consists of six stages.
 To illustrate the board flow, we will go through an example issue and its happy path towards
 resolution describing the possible paths as each column is reached.
 
-1. New issues start in the "New" column. There is no limit to the number of issues in this 
-   column; however, if too many issues pile up to be discussed in the backlog meeting, then a 
-   limit should be defined.
+1. New issues start in the "New" column. There is no limit to the number of issues in this column;
+   however, if too many issues pile up to be discussed in the backlog meeting, then a limit should
+   be defined.
 2. New issues can go to three places:
     1. Todo: The todo column has space, and the issue is considered worthy of accepting.
     2. Backlog: The todo column is full, but the issue is considered worthy of accepting.
-    3. Closed: The issue is not considered worth of accepting and/or the backlog and todo
-    columns are full.
+    3. Closed: The issue is not considered worth of accepting and/or the backlog and todo columns
+       are full.
 3. The issue reaches "Todo" and waits to be assigned to a worker.
-4. Someone finishes an issue "In Progress" and assigns themselves an issue in "Todo" moving
-   that issue to "In Progress".
-5. One or two days of work pass and the issue moves to "In Review".
+4. Someone finishes an issue "In Progress" and assigns themselves an issue in "Todo" moving that
+   issue to "In Progress".
+5. Now the issue has a time limit of one to three days to move into "In Review" or else be closed in
+   favor of newer, related issues.
 6. Someone other than the original worker looks at the issue and marks it "Done".
-7. Issues in the "Done" column are looked over, deployment steps completed, and the issue 
-   is archived at the nest backlog meeting. 
-   
+7. Issues in the "Done" column are looked over, deployment steps completed, and the issue is
+   archived at the nest backlog meeting.
+
 ## Issue Labels
 
 Issue labels can become confusing as they are applied to the issues. For these reasons, DE has
 selected a few labels to help prioritize work.
 
+Any issue with one of these labels attached cannot be placed in the backlog. The reason for adding
+any label at all is to denote a higher priority than other issues on the project board and placing
+high priority items in the backlog
+
+- **blocked** - Issues that need questions answered before more work can proceed.
+- **bug** - Any issue stemming from a deployed feature not functioning as expected.
 - **incident** - Issues relating to a service disruption of a deployed application.
+- **dependencies** - All dependency updates. Dependabot creates the PR and places the label on it.
+- **pinned** - Placed by Stale bot on issues with no activity for 60 days, and a developer who deems
+  the issue should never be closed.
 - **security** - Issues relating to security, usually dependency updates or scanning report
   failures.
-- **pinned** - Placed by Stale bot on issues with no activity for 60 days, and a developer
-who deems the issue should never be closed.
-- **dependencies** - All dependency updates. Dependabot creates the PR and places the label
-  on it.
-- **bug** - Any issue stemming from a deployed feature not functioning as expected. 
-- **blocked** - Issues that need questions answered before more work can proceed.
 
 # Inspirations
 

@@ -2,12 +2,12 @@
 
 # Gitflow Branch Management
 
-When an issue moves from "Todo" to "In Progress" on the Kanban project board, it is important
-to use a Git branching strategy that prevents merge conflicts and allows for hotfixes and bugs
-to be deployed independent of feature development work.
+When an issue moves from "Todo" to "In Progress" on the Kanban project board, it is important to use
+a Git branching strategy that prevents merge conflicts and allows for hotfixes and bugs to be
+deployed independent of feature development work.
 
-For these reasons the DE (Digital Engagement) team has adopted Gitflow for moving development
-work through "In Progress" to "Done". 
+For these reasons the DE (Digital Engagement) team has adopted Gitflow for moving development work
+through "In Progress" to "Done".
 
 ## Default Branches
 
@@ -26,11 +26,12 @@ work through "In Progress" to "Done".
 
 ## Process
 
-The overall flow of Gitflow ([taken from Atlassian docs](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)):
+The overall flow of
+Gitflow ([taken from Atlassian docs](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)):
 
 1. A `dev` branch is created from `main`.
 1. A `release` branch is created from `dev`.
-1. `feature/` branches are created from develop when an issue is assigned and marked 
+1. `feature/` branches are created from develop when an issue is assigned and marked
    "In Progress".
 1. When a `feature/` is complete it is merged into the `dev` branch.
 1. When the `release` branch is done it is merged into `dev` and `main`.
