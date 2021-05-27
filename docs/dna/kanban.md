@@ -43,25 +43,31 @@ resolution describing the possible paths as each column is reached.
    favor of newer, related issues.
 6. Someone other than the original worker looks at the issue and marks it "Done".
 7. Issues in the "Done" column are looked over, deployment steps completed, and the issue is
-   archived at the nest backlog meeting.
+   archived at the next backlog meeting.
 
 ## Issue Labels
 
 Issue labels can become confusing as they are applied to the issues. For these reasons, DE has
 selected a few labels to help prioritize work.
 
-Any issue with one of these labels attached cannot be placed in the backlog. The reason for adding
-any label at all is to denote a higher priority than other issues on the project board and placing
-high priority items in the backlog
+Any issue with one of these labels attached cannot be placed in the backlog, except "stale". The 
+reason for adding any label at all is to denote a higher priority than other issues on the project 
+board and placing high priority items in the backlog inherently lowers their perceived 
+importance.
+
+Default Labels:
 
 - **blocked** - Issues that need questions answered before more work can proceed.
 - **bug** - Any issue stemming from a deployed feature not functioning as expected.
 - **incident** - Issues relating to a service disruption of a deployed application.
 - **dependencies** - All dependency updates. Dependabot creates the PR and places the label on it.
-- **pinned** - Placed by Stale bot on issues with no activity for 60 days, and a developer who deems
-  the issue should never be closed.
+- **pinned** - Placed by a developer on issues with no activity for 60 days but are deemed too 
+  important to close.
 - **security** - Issues relating to security, usually dependency updates or scanning report
   failures.
+- **stale** - Placed by Stalebot on issues with no activity for 60 days. If no further activity 
+  is taken, the issue will be closed by Stalebot in after one week.
+- **unblocker** - Issues that precede another "blocked" issue.
 
 # Inspirations
 
