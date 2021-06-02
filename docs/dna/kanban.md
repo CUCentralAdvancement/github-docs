@@ -14,6 +14,12 @@ to be a "pull system" where work gets pulled into development as other tasks are
 capacity rules are reached, no more work can be placed onto the board preventing backlog tasks
 becoming outdated or irrelevant.
 
+## Participants
+
+- **The Facilitator** - 
+
+## Stages of Work
+
 The DE project board currently consists of six stages.
 
 | Column | Description | 
@@ -40,10 +46,17 @@ resolution describing the possible paths as each column is reached.
 4. Someone finishes an issue "In Progress" and assigns themselves an issue in "Todo" moving that
    issue to "In Progress".
 5. Now the issue has a time limit of one to three days to move into "In Review" or else be closed in
-   favor of newer, related issues.
+   favor of newer, related issues. If an issue remains In Progress for several days without an 
+   update, the "blocked" should be placed on it and reviewed in the next status meeting.
 6. Someone other than the original worker looks at the issue and marks it "Done".
 7. Issues in the "Done" column are looked over, deployment steps completed, and the issue is
    archived at the next backlog meeting.
+   
+## Issue Checklists and Templates
+
+@todo Add notes about the checklists in each issue allowing more granular units of work to be 
+kept track of without cluttering up the work board. The checklist progress gets shown on the 
+project board for an easy way to judge WIP issue "done-ness". 
 
 ## Issue Labels
 
@@ -68,6 +81,14 @@ Default Labels:
 - **stale** - Placed by Stalebot on issues with no activity for 60 days. If no further activity 
   is taken, the issue will be closed by Stalebot in after one week.
 - **unblocker** - Issues that precede another "blocked" issue.
+
+## Work In Progress Limit
+
+@todo Add limits for each column as well as limits per team member.
+
+## Queue Replenishment Meetings
+
+...
 
 # Inspirations
 
