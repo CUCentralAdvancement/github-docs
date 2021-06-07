@@ -88,7 +88,12 @@ Default Labels:
 
 ## Queue Replenishment Meetings
 
-...
+Backlog size should be determined by the volatility of work. The DE team is involved in many highly 
+volatile projects, and therefore the backlog should not grow to included items that can be worked on in 
+the next month.
+
+To determine the limit of items in the backlog, the number of items pushed through per week should be 
+determined and then multiplied by four to get a theoretical limit of work done in a month's time.
 
 # Inspirations
 
