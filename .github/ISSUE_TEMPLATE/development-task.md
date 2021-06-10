@@ -9,9 +9,6 @@ Please describe your development task in as much detail as you'd like.
 **Acceptance Criteria**
 
 - [ ] New route `/api/the-feature` added...
-
-**Testing Added**
-
 - [ ] Added test for...
 
 **Next Issue**
