@@ -75,6 +75,8 @@ Components:
   Sometimes issues may be closed without completing all the checklist items as the checklist is supposed 
   to be modified as work progresses. You probably won't get all the AC right when project work is 
   exploratory, and most hard requirements aren't known yet.
+- **Next Issue** - This section gets you thinking about the next step in the process once the current task 
+  is completed. If you can't think of a next step, then maybe the issue isn't ready to be worked on yet.
 - **CI Checks** - Once the issue moves onto the stage where a pull request is made, several CI checks 
   should run and pass. If they don't pass more work is needed to complete the issue even if the AC 
   checklist is completed.
