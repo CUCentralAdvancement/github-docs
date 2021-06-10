@@ -33,4 +33,4 @@ You likely won't reach a quick answer, but just asking should lead you down the 
 
 ## Inspiration
 
-You can read this ADR to find out more: [need link]()
+You can [read this ADR to find out more.](https://github.com/CUCentralAdvancement/adr-docs/blob/main/docs/0006-theory-of-constraints-kanban.md)

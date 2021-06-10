@@ -148,7 +148,8 @@ GitHub:
 
 Heroku's Production Environment:
 
-- [ ] At least two dynos each for web and workers are running in production for redundancy
+- [ ] At least two dynos each for web and workers are running in production for redundancy, **but only if 
+  you can't use an autoscaling addon service.**
 - [ ] If database, use a production tier database
 - [ ] Backup schedule and DR for databases, media assets
 - [ ] App monitoring tool and alerts set up
