@@ -109,7 +109,22 @@ Currently, there is no work in progress limit on the DE project board. For the t
 monitored to determine a WIP limit and once known, each worker will adhere to their individual limit 
 across all projects serving stakeholders.
 
-## Queue Replenishment Meetings
+## Boardwalk Meetings
+
+...
+
+## Delivery Cadence
+
+...there should be one but how and how often? Maybe plan to incorporate an allocated amount of cards to 
+each stakeholder group per month. Work on those cards should be estimated for two weeks leaving half the 
+time for carry over and more testing. 
+
+
+## Input Cadence 
+
+...
+
+## The Backlog
 
 Backlog size should be determined by the volatility of work. The DE team is involved in many highly volatile
 projects, and therefore the backlog should not grow to included items that can be worked on in the next 
