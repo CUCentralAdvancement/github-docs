@@ -2,7 +2,9 @@ name: eslint the code
 on:
   pull_request:
     branches:
-      - main
+#      Uncomment to run on main branch.
+#      - main
+      - not-real
 jobs:
   cypress-run:
     name: Lint Code
