@@ -155,5 +155,6 @@ Heroku's Production Environment:
 - [ ] App monitoring tool and alerts set up
 - [ ] Log monitoring tool and alerts set up
 - [ ] SLA agreed upon and written down for service uptime and maintenance
+- [ ] DNS entry created for production or DNS planned to switch when go live  
 
 

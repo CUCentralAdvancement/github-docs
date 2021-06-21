@@ -94,8 +94,8 @@ Default Labels:
 
 - **blocked** - Issues that need questions answered before more work can proceed.
 - **bug** - Any issue stemming from a deployed feature not functioning as expected.
-- **incident** - Issues relating to a service disruption of a deployed application.
 - **dependencies** - All dependency updates. Dependabot creates the PR and places the label on it.
+- **incident** - Issues relating to a service disruption of a deployed application.
 - **pinned** - Placed by a developer on issues with no activity for 60 days but are deemed too important to
   close.
 - **security** - Issues relating to security, usually dependency updates or scanning report failures.
