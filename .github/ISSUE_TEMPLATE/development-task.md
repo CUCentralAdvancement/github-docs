@@ -1,5 +1,7 @@
 ---
-name: Development Task about: Development work not related to feature stories. title: ''
+name: Development Task 
+about: Development work not related to feature stories. 
+title: ''
 labels: ''
 assignees: ''
 ---

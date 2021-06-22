@@ -112,6 +112,10 @@ Things to include:
 - What is the SLA for service disruption resolution?
 - Ways to run "smoke tests" after a deploy, if that makes sense.
 
+## DNS Configuration
+
+...
+
 ## Additional Docs
 
 You'll inevitably have more information to write down about all the topics above. For instance,
