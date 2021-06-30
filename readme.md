@@ -98,6 +98,14 @@ those applications are being moved to the new stack with an expected deprecation
   Drupal 7 and so there is one Drupal 7 app still in production. Drupal 9 was used for a CMS for a bit but the
   current needs aren't related to an enterprise CMS so Drupal 9 turned out to be overkill. No shade towards
   PHP or Drupal, but they aren't the right tools to use for this group.
+  
+## Local Development
+
+Each project will have a unique local development setup that will be detailed in the project's readme file,
+but there are some things that are good to know across projects. Over time, this list will be filled in.
+
+- You can use `lvh.me` for testing subdomains without needing vhosts or DNSmasq or anything like that. For 
+  example, `http://sub.lvh.me:3000` will handle the same request as `http://localhost:3000`.  
 
 ## Heroku Platform
 
