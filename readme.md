@@ -24,6 +24,9 @@ managing user access.
   channel exists in Slack where most notifications go. You can `/github subcribe owner/repo thing` to add 
   more or `/github unsubscribe` to remove notifications. More details can be found on the GitHub 
   documentation page.
+- [Secret Management](docs/github/secrets.md) - Each project will likely include configuration variables 
+  that should never be committed to code. While using GitHub's "secrets" functionality is pretty 
+  straight-forward, there are some caveats to know about.
 
 ## Development Philosophies and Workflows
 

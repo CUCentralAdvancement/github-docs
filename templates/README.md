@@ -111,10 +111,14 @@ Things to include:
 - Any troubleshooting tips related to current/past deployment issues.
 - What is the SLA for service disruption resolution?
 - Ways to run "smoke tests" after a deploy, if that makes sense.
+- [GitHub secret management](../docs/github/secrets.md).
 
 ## DNS Configuration
 
-...
+On Heroku, you need to consider whether to include custom domains. Read the following documentation and 
+put any relevant details in this section of the readme.
+
+https://github.com/CUCentralAdvancement/heroku-docs/blob/main/docs/platform/dns.md
 
 ## Additional Docs
 
