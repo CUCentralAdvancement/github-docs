@@ -54,7 +54,7 @@ The DE project board currently consists of six stages.
 To illustrate the board flow, we will go through an example issue and its happy path towards resolution
 describing the possible paths as each column is reached.
 
-1. New issues start in the "New" column. There is no limit to the number of issues in this column; however, if
+1. New issues start in the "New" column. Added stuff...There is no limit to the number of issues in this column; however, if
    too many issues pile up to be discussed in the backlog meeting, then a limit should be defined. Each 
    issue should be written in way where it can be moved into "Done" within three days of starting work. 
    You should [read the Simplicity document](./simplicity.md) to get a better idea of the desired thought 
