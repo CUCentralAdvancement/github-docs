@@ -1,0 +1,37 @@
+# More examples: https://github.com/cypress-io/cypress-realworld-app/blob/develop/.github/workflows/main.yml
+
+name: Cypress Tests
+on:
+  pull_request_target:
+    branches:
+      - main
+jobs:
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    env:
+      SOME_VAR: ${{ secrets.SOME_VAR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup code
+        run: yarn
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          spec: cypress/integration/**/*
+          build: yarn build
+          start: yarn start
+          wait-on: "http://localhost:3000"
+          wait-on-timeout: 120
+          browser: chrome
+          record: true
+        env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # Recommended: pass the GitHub token lets this action correctly
+          # determine the unique run id necessary to re-run the checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
