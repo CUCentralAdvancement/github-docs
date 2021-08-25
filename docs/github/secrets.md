@@ -43,8 +43,40 @@ creating and managing a new project.
 
 ## Troubleshooting
 
-- **Dependabot CI run fails but when you recreate it the tests pass** - You probably forgot to expose 
-  secrets to Dependabot which has to be done in a different tab than the regular repository secrets. The 
-  reason for this is that Dependabot creates a fork when making a PR and therefore your user doesn't kick 
-  off the CI checks. 
+You might run into a few issues with secret management that can cause CI test runs to fail.
+
+### Dependabot CI run fails but when you recreate it the tests pass
+
+You probably forgot to expose secrets to Dependabot which has to be done in a different tab than the regular repository secrets. The reason for this is that Dependabot creates a fork when making a PR and therefore your user doesn't kick off the CI checks.
+
+You also need to create a separate file that tells GitHub when to run the CI check. For example, with Cypress test runs, you would set up the "jobs" section differnelty and use the pull request target event intsead of the usual pull request event.
+
+```yaml
+# For runs triggered by the Dependabot user.
+name: Cypress Tests
+on:
+  pull_request_target:
+    branches:
+      - main
+jobs:
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    
+    
+# For runs triggered by your user.
+name: Cypress Tests
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
+```
+
+You can view the sample files for Cypress test runs in https://github.com/CUCentralAdvancement/github-docs/tree/main/.github/workflows.
 
