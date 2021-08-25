@@ -4,7 +4,8 @@ name: Cypress Tests
 on:
   pull_request_target:
     branches:
-      - main
+      - not-real
+      # - main
 jobs:
   cypress-run:
     name: Cypress run
