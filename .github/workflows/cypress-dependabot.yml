@@ -1,16 +1,18 @@
 # More examples: https://github.com/cypress-io/cypress-realworld-app/blob/develop/.github/workflows/main.yml
+
 name: Cypress Tests
 on:
-  pull_request:
+  pull_request_target:
     branches:
-#      Uncomment to run on main branch
-#      - main
       - not-real
+      # - main
 jobs:
   cypress-run:
     name: Cypress run
     runs-on: ubuntu-latest
-    if: ${{ github.actor != 'dependabot[bot]' }}
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    env:
+      SOME_VAR: ${{ secrets.SOME_VAR }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2

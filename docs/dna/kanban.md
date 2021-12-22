@@ -5,7 +5,8 @@
 The DE (Digital Engagement) team manages all work via a Kanban project board. Taiichi Ohno, an industrial
 engineer at Toyota, developed kanban to improve manufacturing efficiency, but many people have adopted the
 same principles within software development. Theory of Constraints, sometimes called "drum-buffer-rope", is
-also intertwined with the kanban concept as it applies to software development.
+also intertwined with the kanban concept as it applies to software development. "kanban" means "card" in
+Japanese, hence the focus on cards within Kanban workflows.
 
 David J. Anderson came up with "Kanban with a capital K" while working at Microsoft in the early 2000's. A 
 lot of ideas and procedures in this document were written while [reading his book](https://www.amazon.com/Goal-Process-Ongoing-Improvement-ebook/dp/B002LHRM2O/).
@@ -14,6 +15,17 @@ Work is condensed into one "project board" that lists all the tasks in one place
 directional flow, and rules related to how many tasks can be in each column. It is said to be a "pull system"
 where work gets pulled into development as other tasks are finished. Once the capacity rules are reached, no
 more work can be placed onto the board preventing backlog tasks becoming outdated or irrelevant.
+
+## Key Kanban Tenants
+
+Kanban has five key tenants to focus on. They all relate to the concept of "flow" and keeping things moving
+along without accumulating a lot of work that can't be acted upon.
+
+- Visualize workflow
+- Limit work-in-progress
+- Measure and manage flow
+- Make process policies explicit
+- Use models to recognize improvement opportunities
 
 ## Participants
 
@@ -109,6 +121,8 @@ Currently, there is no work in progress limit on the DE project board. For the t
 monitored to determine a WIP limit and once known, each worker will adhere to their individual limit 
 across all projects serving stakeholders.
 
+The suggested limit per worker is for two items at a time to be in progress.  
+
 ## Boardwalk Meetings
 
 ...
@@ -120,7 +134,7 @@ each stakeholder group per month. Work on those cards should be estimated for tw
 time for carry over and more testing. 
 
 
-## Input Cadence 
+## Input Cadence and Queue
 
 ...
 
