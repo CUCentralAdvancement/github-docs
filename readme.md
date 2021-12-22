@@ -20,13 +20,13 @@ managing user access.
 - [User Management](docs/github/user-management.md) - There are several GitHub Teams in the
   CUCentralAdvancement organization. During employee onboarding/off-boarding, the Digital Engagement team is
   responsible for editing permissions and maintaining proper user access control across the organization.
-- [Slack Integration](https://github.com/integrations/slack#configuration) - A `#github-activity` 
-  channel exists in Slack where most notifications go. You can `/github subcribe owner/repo thing` to add 
-  more or `/github unsubscribe` to remove notifications. More details can be found on the GitHub 
-  documentation page.
-- [Secret Management](docs/github/secrets.md) - Each project will likely include configuration variables 
-  that should never be committed to code. While using GitHub's "secrets" functionality is pretty 
-  straight-forward, there are some caveats to know about.
+- [Slack Integration](https://github.com/integrations/slack#configuration) - A `#github-activity`
+  channel exists in Slack where most notifications go. You can `/github subcribe owner/repo thing` to add more
+  or `/github unsubscribe` to remove notifications. More details can be found on the GitHub documentation
+  page.
+- [Secret Management](docs/github/secrets.md) - Each project will likely include configuration variables that
+  should never be committed to code. While using GitHub's "secrets" functionality is pretty straight-forward,
+  there are some caveats to know about.
 
 ## Development Philosophies and Workflows
 
@@ -85,62 +85,69 @@ those applications are being moved to the new stack with an expected deprecation
   project, especially if there is already a framework that supports most of the needed features. Blitz and
   Redwood are promising in this regard for rapid application development, but Next.js + custom code is still
   the current winner in this category.
-- [Ruby on Rails](docs/backend/rails.md) - Ruby on Rails is the preminent full-stack rapid application
-  development framework used on Heroku dynos. The simplicity and pragmaticism of the Rails community also fits
-  in well to the scale and team size of Digital Engagement. Rails can be used to host frontend and backend
-  code or serve as a backend to decoupled frontends.
-- [Phoenix](docs/backend/phoenix.md) - Phoenix and Elixir are great fits for web applications that involve
-  users who need dashboards and need to edit and update content. The real-time features in addition to
-  LiveView make it easier to maintain these applications all in one place. Using Elixir for application
-  development is still exploratory but will continue.
 - [Go](docs/backend/go.md) - Simpler web projects can use Go...going forward. For instance, a one or two route
   API or a static file server are good candidates for a Go project. We are archiving some apps built with
   Next.js as static sites served via Fiber, or similar Go web framework, for better performance and resource
   management.
-- [Legacy PHP](docs/backend/php.md) - Developers working on the current Advancement applications grew up using
-  Drupal 7 and so there is one Drupal 7 app still in production. Drupal 9 was used for a CMS for a bit but the
-  current needs aren't related to an enterprise CMS so Drupal 9 turned out to be overkill. No shade towards
-  PHP or Drupal, but they aren't the right tools to use for this group.
-  
+- [PHP](docs/backend/php.md) - Developers working on the current Advancement applications grew up using
+  Drupal 7 and so there is one Drupal 7 app still in production. Drupal 9 is still planned to be utilized, 
+  but it all depends on future discussions.
+
 ## Local Development
 
 Each project will have a unique local development setup that will be detailed in the project's readme file,
 but there are some things that are good to know across projects. Over time, this list will be filled in.
 
-- You can use `lvh.me` for testing subdomains without needing vhosts or DNSmasq or anything like that. For 
-  example, `http://sub.lvh.me:3000` will handle the same request as `http://localhost:3000`.  
+- You can use `lvh.me` for testing subdomains without needing vhosts or DNSmasq or anything like that. For
+  example, `http://sub.lvh.me:3000` will handle the same request as `http://localhost:3000`.
 
 ## Heroku Platform
 
 Heroku is the platform used to run frontend and backend applications. While Heroku allows for many languages
-to be deployed on it's infrastructure, we will only discuss deploying apps written in TS/JS, Elixir, Go, Ruby,
+to be deployed on its infrastructure, we will only discuss deploying apps written in TS/JS, Elixir, Go, Ruby,
 or PHP. There are also a few services that remain consistent across apps.
 
 You can view the Heroku docs in their own repo: https://github.com/CUCentralAdvancement/heroku-docs
 
 ## Salesforce
 
-Will be used somehow for online donations and donor management.
+Will be used somehow for online donations and donor management. The "NextGen" project controls development 
+of Salesforce-related things, and the Digital Engagement/Marketing team has not been involved in the 
+development as much as initially planned.
 
 - [Automated Testing](docs/salesforce/automated-testing.md) - Still being thought out...but attempting to use
-  Cypress.
-- [Lightning Platform](docs/salesforce/lightning.md) - Still being thought out...
-- [VisualForce React Apps](docs/salesforce/vf-react.md) - Still being thought out...
-- [Mulesoft](docs/salesforce/mulesoft.md) - Still being thought out...
+  Cypress. The final recommendation was to use https://www.testim.io/ but that never panned out.
+- [Lightning Platform](docs/salesforce/lightning.md) - Still being thought out...likely no work within DE/M
+- [VisualForce React Apps](docs/salesforce/vf-react.md) - Still being thought out...likely no work within DE/M
+- [Mulesoft](docs/salesforce/mulesoft.md) - Still being thought out...likely no work within DE/M
 
 ## Legacy Apps
 
-Drupal 7 site on Pantheon.
+A few applications currently in production are scheduled to be 
 
 - [Giving Site](docs/legacy/giving.md) - A Drupal 7 site hosted on Pantheon that is in the process of being
-  deprecated.
+  deprecated. The site is the sole entry point for making online donations to the University of Colorado, 
+  but it also serves some marketing functions as well as hosting CU Foundation content.
 - [Essential CU](docs/legacy/essential-cu.md) - This has been moved to a Next.js project that will be archived
-  as a static site.
+  as a static site. The "Essential CU" campaign might end soon enough, and therefore the content would 
+  need to be hosted at a different place. Ideally, story content on this application will be aggregated 
+  into a central place where users can easily navigate and find content.
 
-## Hasura Data Graph
+## Apps Partially Developed
 
-Way into the future, but this will federate all data needed for frontend apps via GraphQL.
+Several applications and ideas were partially developed and then abandoned for better solutions. Instead 
+of deleting those pieces of documentation, they will be listed here for historical reference. 
 
-- [Hasura](docs/backend/hasura.md) - Written in Haskell but provides ways to run resolvers in arbitrary
-  languages. Stores data via Postgres and makes traditional relational database operations easier to manage
-  within GraphQL.
+- [Hasura Data Graph](docs/backend/hasura.md) - Written in Haskell but provides ways to run resolvers in
+  arbitrary languages. Stores data via Postgres and makes traditional relational database operations easier to
+  manage within GraphQL. At one point, the idea was to push all data through this graph, but work on 
+  Heroku with microservices has stalled as of summer 2021.
+- [Ruby on Rails](docs/backend/rails.md) - Ruby on Rails is the preeminent full-stack rapid application
+  development framework used on Heroku dynos. The simplicity and pragmatism of the Rails community also fits
+  in well to the scale and team size of Digital Engagement. Rails can be used to host frontend and backend
+  code or serve as a backend to decoupled frontends. We spent a bit of time trying to migrate the giving.
+  cu.edu website to RoR: https://github.com/CUCentralAdvancement/giving-backend 
+- [Phoenix](docs/backend/phoenix.md) - Phoenix and Elixir are great fits for web applications that involve
+  users who need dashboards and need to edit and update content. The real-time features in addition to
+  LiveView make it easier to maintain these applications all in one place. Using Elixir for application
+  development is still exploratory but will continue...until it does not. Like right now.
