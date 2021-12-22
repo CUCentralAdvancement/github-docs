@@ -1,3 +1,0 @@
-[<-- Home](/readme.md)
-
-# Authorization

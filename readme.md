@@ -78,8 +78,6 @@ those applications are being moved to the new stack with an expected deprecation
 - [Authetication Policies](docs/backend/authentication.md) - Applications built by DE developers use two
   different kinds of authentication strategies: Ping SSO and Auth0. Both are hosted services leaving no
   authentication within the individual applications themselves.
-- [Authorization Policies](docs/backend/authorization.md) - Authorization is done within each application but
-  follows a pattern of connecting authentication profiles to user application identities.
 - [node/TS](docs/backend/node.md) - Express is still one of the most widely used web frameworks, and it is
   possible that using a node-based solution will make the most sense when making considerations for a new
   project, especially if there is already a framework that supports most of the needed features. Blitz and
@@ -117,9 +115,10 @@ development as much as initially planned.
 
 - [Automated Testing](docs/salesforce/automated-testing.md) - Still being thought out...but attempting to use
   Cypress. The final recommendation was to use https://www.testim.io/ but that never panned out.
-- [Lightning Platform](docs/salesforce/lightning.md) - Still being thought out...likely no work within DE/M
-- [VisualForce React Apps](docs/salesforce/vf-react.md) - Still being thought out...likely no work within DE/M
-- [Mulesoft](docs/salesforce/mulesoft.md) - Still being thought out...likely no work within DE/M
+- [ascend Implementation](https://github.com/CUCentralAdvancement/sf-cuadvancement) - A vendor, UCI, 
+  manages configuration and code deployed to the Advancement Salesforce CRM solution.
+- [NextGen Feature Team](https://github.com/CUCentralAdvancement/nextgen-feature-team) - The feature team 
+  develops code in a different repository and the DE/M team has not been that involved in the process so far.
 
 ## Legacy Apps
 
