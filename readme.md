@@ -69,6 +69,9 @@ routing, tooling, and SSR/static compilation whether the app needs a server or n
   those parts will still use the same design tokens to maintain branding consistency.
 - [Cypress Testing](docs/frontend/cypress.md) - Cypress.io is the preferred way to write functional,
   end-to-end tests for all applications.
+- [Webflow](docs/frontend/webflow.md) - Recently, Webflow has been used for smaller marketing projects. It 
+  could be expanded to segment several groups using giving.cu.edu into their own camps and simplfy user 
+  experiences and design.
 
 ## Backend Apps And Concerns
 
@@ -113,20 +116,22 @@ Will be used somehow for online donations and donor management. The "NextGen" pr
 of Salesforce-related things, and the Digital Engagement/Marketing team has not been involved in the 
 development as much as initially planned.
 
-- [Automated Testing](docs/salesforce/automated-testing.md) - Still being thought out...but attempting to use
-  Cypress. The final recommendation was to use https://www.testim.io/ but that never panned out.
-- [ascend Implementation](https://github.com/CUCentralAdvancement/sf-cuadvancement) - A vendor, UCI, 
-  manages configuration and code deployed to the Advancement Salesforce CRM solution.
-- [NextGen Feature Team](https://github.com/CUCentralAdvancement/nextgen-feature-team) - The feature team 
-  develops code in a different repository and the DE/M team has not been that involved in the process so far.
+- [Automated Testing](docs/salesforce/automated-testing.md) - Testing is still manual but there was an attempt 
+  to use Cypress and Codeception. The final recommendation was to use https://www.testim.io/ but that never 
+  panned out.
+- [CU Ascend Implementation](https://github.com/CUCentralAdvancement/sf-cuadvancement) - A vendor, UCI, 
+  manages configuration and code deployed to the Advancement Salesforce CRM solution. By 2023, the CU CRM team
+  should be managing this repo using the Future State Support Model.
 
 ## Legacy Apps
 
-A few applications currently in production are scheduled to be 
+A few applications currently in production are scheduled to be deprecated but there is no hard timeline for
+them to go offline.
 
 - [Giving Site](docs/legacy/giving.md) - A Drupal 7 site hosted on Pantheon that is in the process of being
   deprecated. The site is the sole entry point for making online donations to the University of Colorado, 
-  but it also serves some marketing functions as well as hosting CU Foundation content.
+  but it also serves some marketing functions as well as hosting CU Foundation content. Drupal 7's end-of-life
+  makes it imperative to not delay migrating and splitting off content into discrete applications.
 - [Essential CU](docs/legacy/essential-cu.md) - This has been moved to a Next.js project that will be archived
   as a static site. The "Essential CU" campaign might end soon enough, and therefore the content would 
   need to be hosted at a different place. Ideally, story content on this application will be aggregated 
@@ -150,3 +155,5 @@ of deleting those pieces of documentation, they will be listed here for historic
   users who need dashboards and need to edit and update content. The real-time features in addition to
   LiveView make it easier to maintain these applications all in one place. Using Elixir for application
   development is still exploratory but will continue...until it does not. Like right now.
+- [NextGen Feature Team](https://github.com/CUCentralAdvancement/nextgen-feature-team) - The feature team 
+  started developing code in this repo, but I don't think it is being used anymore.
